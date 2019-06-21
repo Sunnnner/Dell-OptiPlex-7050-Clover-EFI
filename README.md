@@ -3,7 +3,7 @@ Clover for OptiPlex 7050 with Kaby Lake CPU & IGPU
 
 Only fix the Graphics by Bios hack, Ethernet, USB, and sound card with AppleALC, but, is enough! Less is more.
 
-- DVMT Pre-Allocated address is 0x795, so "setup_var 0x795 0x2" to set 64MB [中文教程](https://zhuanlan.zhihu.com/p/39798235) [Englist](https://www.firewolf.science/2015/04/guide-intel-hd-graphics-5500-on-os-x-yosemite-10-10-3)
+- DVMT Pre-Allocated address is 0x795, so "setup_var 0x795 0x2" to set 64MB [中文教程](https://zhuanlan.zhihu.com/p/39798235) [English](https://www.firewolf.science/2015/04/guide-intel-hd-graphics-5500-on-os-x-yosemite-10-10-3)
 - Note: the DVMT fixup will lose after set BOIS to factory default!
 - DVMT fix is recommend, even though whatevergreen can do some path to fix it.
 
@@ -17,6 +17,8 @@ Only fix the Graphics by Bios hack, Ethernet, USB, and sound card with AppleALC,
    
    and you will see a cmd line
 3. just run `setup_var 0x795 0x2` using this cmd line
+
+   `setup_var 0x795 0x3` (96MB) for 4K moniotr
 
 4. fine, the graphics is ok to boot up macOS
 
