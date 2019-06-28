@@ -242,7 +242,7 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>ProductName</key>
-		<string>iMac18,3</string>
+		<string>iMac18,1</string>
 		<key>Trust</key>
 		<true/>
 	</dict>
