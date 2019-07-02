@@ -1,4 +1,12 @@
 # OptiPlex 7050 Clover
+
+* Specify	
+	* CPU: i7-7700
+	* Audio: ALC255
+	* Graphics: HD630
+    * Monitor: DP 4K monitor
+
+
 Clover for OptiPlex 7050 with Kaby Lake CPU & IGPU
 
 Only fix the Graphics by Bios hack, Ethernet, USB, and sound card with AppleALC, but, is enough! Less is more.
@@ -21,6 +29,9 @@ Only fix the Graphics by Bios hack, Ethernet, USB, and sound card with AppleALC,
    `setup_var 0x795 0x3` (96MB) for 4K moniotr
 
 4. fine, the graphics is ok to boot up macOS
+
+
+
 
 ### FAQ
 1. SIP enable default ?
