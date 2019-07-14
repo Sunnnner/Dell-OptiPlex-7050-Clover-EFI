@@ -9,29 +9,31 @@
 
 Clover for OptiPlex 7050 with Kaby Lake CPU & IGPU
 
-Only fix the Graphics by Bios hack, Ethernet, USB, and sound card with AppleALC, but, is enough! Less is more.
+Only fix the Graphics by modify UEFI variables, Ethernet, USB, and sound card with AppleALC, but, is enough! Less is more.
 
-- DVMT Pre-Allocated address is 0x795, so "setup_var 0x795 0x2" to set 64MB [中文教程](https://zhuanlan.zhihu.com/p/39798235) [English](https://www.firewolf.science/2015/04/guide-intel-hd-graphics-5500-on-os-x-yosemite-10-10-3)
-- Note: the DVMT fixup will lose after set BOIS to factory default!
-- DVMT fix is recommend, even though whatevergreen can do some path to fix it.
+## UEFI Variables
 
-## DVMT fix step
-1. unzip 'EFI-shell.zip' to a `FAT32` partition of a USB disk
-   
-   you will see some thing like this : "/Volumes/UDISK/EFI/BOOT/bootx64.efi" 
-   
-   or "E:/EFI/BOOT/bootx64.efi" 
-2. reboot you machine using this this USB disk in `UEFI BOOT MODE`
-   
-   and you will see a cmd line
-3. just run `setup_var 0x795 0x2` using this cmd line
+In order to run macOS successfully a number of EFI BIOS variables need to be modified. The included Clover bootloader contains an updated `DVMT.efi`, which includes a `setup_var` command to help do just that.
 
-   `setup_var 0x795 0x3` (96MB) for 4K moniotr
+`DVMT.efi` can be launched from Clover directly by renaming it to `Shell64U.efi` in the `tools` folder.
+
+The following variables need to be updated:
+
+| Variable              | Offset | Default value  | Desired value   | Comment                                                    |
+|-----------------------|--------|----------------|-----------------|------------------------------------------------------------|
+| DVMT Pre-allocation   | 0x795  | 0x01 (32M)     | 0x04 (128M)     | Increase DVMT pre-allocated size to 128M for 2K+ displays  |
+
+## Modify DVMT variable step
+
+1. Start up and enter `Clover boot menu`, select `Start UEFI shell 64` and enter.
+
+   I has replace `Shell64U.ef` with `DVMT.efi`, so you are running `DVMT.efi` in fact.
+
+3. just run `setup_var 0x795 0x4` using this cmd line
 
 4. fine, the graphics is ok to boot up macOS
 
-
-
+5. Note: the UEFI Variables will lose after set BOIS to factory default!
 
 ### FAQ
 1. SIP enable default ?
