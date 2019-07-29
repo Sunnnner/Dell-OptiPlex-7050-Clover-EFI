@@ -21,6 +21,7 @@ The following variables need to be updated:
 
 | Variable              | Offset | Default value  | Desired value   | Comment                                                    |
 |-----------------------|--------|----------------|-----------------|------------------------------------------------------------|
+| CFG Lock              | 0x4ED   | 0x01 (Enabled) | 0x00 (Disabled) | Disable CFG Lock to prevent MSR 0x02 errors on boot        |
 | DVMT Pre-allocation   | 0x795  | 0x01 (32M)     | 0x04 (128M)     | Increase DVMT pre-allocated size to 128M for 2K+ displays  |
 
 ## Modify DVMT variable step
