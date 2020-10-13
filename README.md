@@ -47,3 +47,7 @@ The following variables need to be updated:
 ### Credits
 - Apple
 - Dell
+
+### update
+1. update clover and kexts
+2. stand by MacOs 10.14.6 (18G103)
